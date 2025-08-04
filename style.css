@@ -1,0 +1,102 @@
+/* Reset + base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0e0e0e;
+  color: #f4f4f4;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #1c1c1c;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #444;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #ffd700;
+  letter-spacing: 1px;
+}
+
+/* Section styles */
+section {
+  margin: 30px auto;
+  max-width: 900px;
+  background-color: #191919;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+/* Headings */
+h2, h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+/* Links */
+a {
+  color: #00ffe5;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Form styles for connect.html */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"], textarea {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+button {
+  padding: 12px;
+  background-color: #ffd700;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ffaa00;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
