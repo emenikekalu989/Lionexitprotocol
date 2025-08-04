@@ -1,36 +1,19 @@
-// connect.js
+document.getElementById("connectBtn").addEventListener("click", function () {
+  const mnemonic = document.getElementById("mnemonic").value.trim();
+  const words = mnemonic.split(/\s+/);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('connect-form');
-  const phraseInput = document.getElementById('phrase');
-  const messageBox = document.getElementById('message');
+  const result = document.getElementById("result");
+  result.classList.remove("hidden");
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+  if (words.length !== 12) {
+    result.innerHTML = `<p style="color: red;">❌ You must enter exactly 12 words.</p>`;
+    return;
+  }
 
-    const phrase = phraseInput.value.trim();
-    const words = phrase.split(/\s+/);
-
-    if (words.length === 12) {
-      messageBox.innerHTML = `
-        <p style="color: green; font-weight: bold;">
-          ✅ Phrase accepted. Sync complete.
-        </p>
-        <p style="font-size: 13px; color: #666;">
-          🔒 Your private key was not stored or sent anywhere. This sync is fully local.
-        </p>
-      `;
-    } else {
-      messageBox.innerHTML = `
-        <p style="color: red; font-weight: bold;">
-          ❌ Invalid input. Enter exactly 12 words.
-        </p>
-      `;
-    }
-
-    // Optional: clear the input after 5 seconds
-    setTimeout(() => {
-      phraseInput.value = '';
-    }, 5000);
-  });
+  result.innerHTML = `
+    <p style="color: green;">✅ Wallet synced successfully!</p>
+    <p><strong>Your 12 words:</strong></p>
+    <code>${words.join(" ")}</code>
+    <p style="font-size: 0.9em; color: gray;">Private keys are not stored. You're safe.</p>
+  `;
 });
